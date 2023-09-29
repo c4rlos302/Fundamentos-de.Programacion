@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+//Pide un numero y arroja un dia de la semana
 int main()
 {
     int dia;
