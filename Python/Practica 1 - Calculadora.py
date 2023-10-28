@@ -8,7 +8,10 @@ def multiplicar(Numero1=float,Numero2=float):
     print(f"{Numero1} x {Numero2} = {Numero1*Numero2}")
     
 def dividir(Dividendo=float,Divisor=float):
-    print(f"{Dividendo}/{Divisor} = {Dividendo/Divisor}")
+    if Divisor == 0:
+        print(f"El resultado de dividir {Dividendo}/{Divisor} = ∞")
+    else:
+        print(f"{Dividendo}/{Divisor} = {Dividendo/Divisor}")
     
 def potencia(NumeroBase=float,Potencia=int):
     if Potencia > 0:
