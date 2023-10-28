@@ -1,3 +1,21 @@
+def obtener_numero_float(valor):
+    while True:
+        entrada = input(valor)
+        if entrada.replace(".", "", 1).isdigit():
+            numero = float(entrada)
+            return numero
+        else:
+            print("\n¡Error! Debes ingresar un número válido.\n")
+
+def obtener_numero_int(valor):
+    while True:
+        entrada = input(valor)
+        if entrada.isdigit():
+            numero = int(entrada)
+            return numero
+        else:
+            print("\n¡Error! Debes ingresar un número entero.\n")
+
 def sumar(Numero1=float,Numero2=float):
     print(f"{Numero1} + {Numero2} = {Numero1+Numero2}")
 
@@ -9,7 +27,8 @@ def multiplicar(Numero1=float,Numero2=float):
     
 def dividir(Dividendo=float,Divisor=float):
     if Divisor == 0:
-        print(f"El resultado de dividir {Dividendo}/{Divisor} = ∞")
+        print("La división sobre 0 es inválida ya que el resultado de dividir")
+        print(f"cualquier número sobre 0 = ∞, en este caso {Dividendo}/{Divisor} = ∞")
     else:
         print(f"{Dividendo}/{Divisor} = {Dividendo/Divisor}")
     
@@ -69,17 +88,17 @@ while opcion != 7:
     print("---------------------------------\n"
           '"Seleciona la operación deseada": \n'
           "---------------------------------\n")
-    opcion = int(input("1. Suma\n"
+    opcion = obtener_numero_int("1. Suma\n"
                        "2. Resta\n"
                        "3. Multiplicación\n"
                        "4. División\n"
                        "5. Potencia\n"
                        "6. Raíz Cuadrada\n"
-                       "7. Salir del programa\n\n"))
+                       "7. Salir del programa\n\n")
     if opcion == 1:
         print('\n"Elegiste la suma"\n')
-        Numero1 = float(input("Ingresa el primer número: "))
-        Numero2 = float(input("Ingresa el segundo número: "))
+        Numero1 = obtener_numero_float("Ingresa el primer número: ")
+        Numero2 = obtener_numero_float("Ingresa el segundo número: ")
         print()
         sumar(Numero1,Numero2)
         print()
@@ -87,8 +106,8 @@ while opcion != 7:
         
     elif opcion == 2:
         print('\n"Elegiste la resta"\n')
-        Numero1 = float(input("Ingresa el primer número: "))
-        Numero2 = float(input("Ingresa el segundo número: "))
+        Numero1 = obtener_numero_float("Ingresa el primer número: ")
+        Numero2 = obtener_numero_float("Ingresa el segundo número: ")
         print()
         restar(Numero1,Numero2)
         print()
@@ -96,8 +115,8 @@ while opcion != 7:
         
     elif opcion == 3:
         print('\n"Elegiste la multiplicación"\n')
-        Numero1 = float(input("Ingresa el primer número: "))
-        Numero2 = float(input("Ingresa el segundo número: "))
+        Numero1 = obtener_numero_float("Ingresa el primer número: ")
+        Numero2 = obtener_numero_float("Ingresa el segundo número: ")
         print()
         multiplicar(Numero1,Numero2)
         print()
@@ -105,8 +124,8 @@ while opcion != 7:
         
     elif opcion == 4:
         print('\n"Elegiste la división"\n')
-        Numero1 = float(input("Ingresa el dividendo: "))
-        Numero2 = float(input("Ingresa el divisor: "))
+        Numero1 = obtener_numero_float("Ingresa el dividendo: ")
+        Numero2 = obtener_numero_float("Ingresa el divisor: ")
         print()
         dividir(Numero1,Numero2)
         print()
@@ -114,8 +133,8 @@ while opcion != 7:
         
     elif opcion == 5:
         print('\n"Elegiste la potencia"\n')
-        Numero1 = float(input("Ingresa el número base: "))
-        Numero2 = int(input("Ingresa la potencia: "))
+        Numero1 = obtener_numero_float("Ingresa el número base: ")
+        Numero2 = obtener_numero_int("Ingresa la potencia: ")
         print()
         potencia(Numero1,Numero2)
         print()
@@ -123,7 +142,7 @@ while opcion != 7:
         
     elif opcion == 6:
         print('\n"Elegiste la raíz cuadrada"\n')
-        Numero1 = float(input("Ingresa el número base: "))
+        Numero1 = obtener_numero_float("Ingresa el número base: ")
         print()
         RaizCuadrada(Numero1)
         print()
