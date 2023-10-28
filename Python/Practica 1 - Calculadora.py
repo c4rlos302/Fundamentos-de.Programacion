@@ -30,7 +30,6 @@ def potencia(NumeroBase=float,Potencia=int):
         print(f"{NumeroBase} elevado al número {Potencia} da como resultado: 1/{resultado} que es igual a {resultado_1}")
 
 def RaizCuadrada(numero=float):
-    
     if numero < 1:
         numero*=-1
         precision = 0.0000000001
@@ -58,6 +57,7 @@ def RaizCuadrada(numero=float):
             medio = (inicio + fin) / 2;
         resultado = medio
         print(f"√{numero} es: {resultado:.10f}")
+
 print("*********************************"
       "\nEsta es una calculadora en python\n"
       "*********************************\n")
