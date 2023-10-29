@@ -94,7 +94,7 @@ int main()
            "\nEsta es una calculadora en C\n"
            "*****************************\n");
     int opcion = 0;
-    while (opcion != 7){
+    do{
         printf("\n-------------------------------\n"
                "Seleciona la operación deseada:\n"
                "-------------------------------\n\n");
@@ -118,7 +118,7 @@ int main()
                 puts("");
                 sumar(Numero1,Numero2);
                 puts("");
-                puts("Ingresa cualquier tecla para continuar");
+                puts("Ingresa cualquier tecla para continuar\n");
                 scanf("%s",&espacio);
             break;
             
@@ -131,7 +131,7 @@ int main()
                 puts("");
                 restar(Numero1,Numero2);
                 puts("");
-                puts("Ingresa cualquier tecla para continuar");
+                puts("Ingresa cualquier tecla para continuar\n");
                 scanf("%s",&espacio);
             break;
             
@@ -144,7 +144,7 @@ int main()
                 puts("");
                 multiplicar(Numero1,Numero2);
                 puts("");
-                puts("Ingresa cualquier tecla para continuar");
+                puts("Ingresa cualquier tecla para continuar\n");
                 scanf("%s",&espacio);;
             break;
             
@@ -157,7 +157,7 @@ int main()
                 puts("");
                 dividir(Dividendo,Divisor);
                 puts("");
-                puts("Ingresa cualquier tecla para continuar");
+                puts("Ingresa cualquier tecla para continuar\n");
                 scanf("%s",&espacio);
             break;
             
@@ -170,7 +170,7 @@ int main()
                 puts("");
                 potencia(NumeroBase,Potencia);
                 puts("");
-                puts("Ingresa cualquier tecla para continuar");
+                puts("Ingresa cualquier tecla para continuar\n");
                 scanf("%s",&espacio);
             break;
             
@@ -181,7 +181,7 @@ int main()
                 puts("");
                 RaizCuadrada(NumeroBase);
                 puts("");
-                puts("Ingresa cualquier tecla para continuar");
+                puts("Ingresa cualquier tecla para continuar\n");
                 scanf("%s",&espacio);
             break;
             
@@ -189,6 +189,6 @@ int main()
                 printf("¡¡Saliste del programa!!");
             break;
         }
-    }
+    }while (opcion != 7);
     return 0;
 }
