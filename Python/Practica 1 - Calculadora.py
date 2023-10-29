@@ -27,8 +27,11 @@ def multiplicar(Numero1=float,Numero2=float):
     
 def dividir(Dividendo=float,Divisor=float):
     if Divisor == 0:
-        print("La división sobre 0 es inválida ya que el resultado de dividir")
-        print(f"cualquier número sobre 0 = ∞, en este caso {Dividendo}/{Divisor} = ∞")
+        if Dividendo == 0:
+            print(f"{Dividendo:.0f}/{Divisor:.0f} = 0")
+        else:
+            print("La división sobre 0 es inválida ya que el resultado de dividir")
+            print(f"cualquier número sobre 0 = ∞, en este caso {Dividendo}/{Divisor} = ∞")
     else:
         print(f"{Dividendo}/{Divisor} = {Dividendo/Divisor}")
     
