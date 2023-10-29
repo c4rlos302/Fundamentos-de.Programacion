@@ -89,11 +89,10 @@ int main()
     char espacio;
     float Numero1, Numero2, Dividendo, Divisor;
     double NumeroBase;
-    int Potencia;
+    int Potencia, opcion;
     printf("*****************************"
            "\nEsta es una calculadora en C\n"
            "*****************************\n");
-    int opcion = 0;
     do{
         printf("\n-------------------------------\n"
                "Seleciona la operación deseada:\n"
