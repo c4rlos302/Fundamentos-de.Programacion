@@ -1,7 +1,7 @@
 def obtener_numero_float(valor):
     while True:
         entrada = input(valor)
-        if entrada.replace(".", "", 1).isdigit():
+        if entrada.replace(".", "", 1).replace("-", "", 1).isdigit():
             numero = float(entrada)
             return numero
         else:
@@ -10,7 +10,7 @@ def obtener_numero_float(valor):
 def obtener_numero_int(valor):
     while True:
         entrada = input(valor)
-        if entrada.isdigit():
+        if entrada.replace("-", "", 1).isdigit():
             numero = int(entrada)
             return numero
         else:
