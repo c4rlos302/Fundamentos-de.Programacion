@@ -41,7 +41,7 @@ def potencia(NumeroBase=float,Potencia=int):
         print(f"{NumeroBase} elevado al número {Potencia} es: {resultado}")
     elif Potencia == 0:
         resultado = 1
-        print(f"Todo número elevado a la {Potencia} excepto el 0, da como resultado: {resultado}")
+        print(f"Todo número elevado a la {Potencia}, da como resultado: {resultado}")
         print(f"por lo tanto, {NumeroBase} elevado al número {Potencia} = {resultado}")
     elif Potencia < 0:
         NumeroMultiplicar = NumeroBase
