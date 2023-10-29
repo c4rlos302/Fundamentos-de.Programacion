@@ -53,7 +53,7 @@ def potencia(NumeroBase=float,Potencia=int):
         print(f"{NumeroBase} elevado al número {Potencia} da como resultado: 1/{resultado} que es igual a {resultado_1}")
 
 def RaizCuadrada(numero=float):
-    if numero < 1:
+    if numero < 0:
         numero*=-1
         precision = 0.0000000001
         inicio = 0
@@ -67,6 +67,8 @@ def RaizCuadrada(numero=float):
             medio = (inicio + fin) / 2;
         resultado = medio
         print(f"No existen las raices cuadradas negativas, pero √-{numero} es: {resultado:.5f}i")
+    elif numero == 0:
+         print(f"√{numero:.0f} es: 0")
     else:
         precision = 0.0000000001
         inicio = 0
