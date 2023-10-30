@@ -45,42 +45,20 @@ double potencia(double NumeroBase,int Potencia){
     printf("\n%lf elevado al número %d da como resultado: 1/%lf que es igual a %.10lf\n",NumeroBase,Potencia,resultado,resultado_1);
 }}
 
-double RaizCuadrada(double numero){
-    double resultado, precision, fin, medio;
-    int inicio;
-    if (numero < 0){
-        numero*=-1;
-        precision = 0.0000000001;
-        inicio = 0;
-        fin = numero;
-        medio = (fin + inicio)/2;
-        while (fin - inicio > precision){
-            if (medio * medio > numero){
-                fin = medio;
-            }
-            else{inicio = medio;}
-            medio = (inicio + fin)/2;
-        }
-        resultado = medio;
-        printf("No existen las raices cuadradas negativas, pero √-%lf es: %.5lfi",numero,resultado);
+double raizCuadrada(double numero) {
+    if (numero < 0) {
+        printf("No se puede calcular la raíz cuadrada de un número negativo.\n");
+        return -1.0; // Valor de error
     }
-    else if (numero == 0){
-         printf("√%.0lf es: 0",numero);
-    }
-    else{
-        precision = 0.0000000001;
-        inicio = 0;
-        fin = numero;
-        medio = (fin + inicio)/2;
-        while (fin - inicio > precision){
-            if (medio * medio > numero){
-                fin = medio;
-            }
-            else{inicio = medio;}
-            medio = (inicio + fin)/2;
+
+    double aproximacion = 1.0; // Valor inicial de aproximación
+
+    while (1) {
+        double siguiente = 0.5 * (aproximacion + numero / aproximacion);
+        if (siguiente == aproximacion) {
+            return siguiente;
         }
-        resultado = medio;
-        printf("√%lf es: %.10lf",numero,resultado);
+        aproximacion = siguiente;
     }
 }
 
@@ -174,11 +152,18 @@ int main()
             break;
             
             case 6:
+                double resultado, numero;
                 printf("\n|Elegiste la Raíz Cuadrada|\n\n");
                 printf("Ingresa el número: ");
-                scanf("%lf",&NumeroBase);
+                scanf("%lf",&numero);
                 puts("");
-                RaizCuadrada(NumeroBase);
+                if (numero == 0){
+                    printf("√%.0lf es: 0",numero);
+                }
+                else {resultado = raizCuadrada(numero);
+                if (resultado >= 0) {
+                printf("La raíz cuadrada de %.2f es aproximadamente %.5f\n", numero, resultado);
+                }}
                 puts("");
                 puts("Ingresa cualquier tecla para continuar\n");
                 scanf("%s",&espacio);
