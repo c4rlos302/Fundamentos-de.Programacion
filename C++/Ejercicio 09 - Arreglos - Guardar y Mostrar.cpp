@@ -10,6 +10,7 @@ void ARREGLO_ENTEROS(){
         cout<<"Ingresa el valor de la posición "<<i+1<<" de tu arreglo de números: ";
         cin>>Arreglo_Numeros_Enteros[i];
     }
+    cout<<endl;
     for (int j = 0; j < a; j++){
         cout<<"El valor de tu arreglo en la posición "<<j+1<<" es: "<<Arreglo_Numeros_Enteros[j]<<endl;
     }
@@ -25,6 +26,7 @@ void ARREGLO_FLOTANTES(){
         cout<<"Ingresa el valor de la posición "<<k+1<<" de tu arreglo de números: ";
         cin>>Arreglo_Numeros_Flotantes[k];
     }
+    cout<<endl;
     for (int l = 0; l < b; l++){
         cout<<"El valor de tu arreglo en la posición "<<l+1<<" es: "<<Arreglo_Numeros_Flotantes[l]<<endl;
     }
@@ -40,6 +42,7 @@ void ARREGLO_STRING(){
         cout<<"Ingresa el valor de la posición "<<m+1<<" de tu arreglo de números: ";
         cin>>Arreglo_Strings[m];
     }
+    cout<<endl;
     for (int n = 0; n < c; n++){
         cout<<"El valor de tu arreglo en la posición "<<n+1<<" es: "<<Arreglo_Strings[n]<<endl;
     }
