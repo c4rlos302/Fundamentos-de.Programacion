@@ -1,5 +1,11 @@
 personas = []
 
+def palabra_convertida(valor):
+    while True:
+        entrada = input(valor)
+        palabra = entrada.capitalize().replace(" ", "")
+        return palabra
+
 def obtener_numero_int(valor):
     while True:
         entrada = input(valor)
@@ -9,15 +15,36 @@ def obtener_numero_int(valor):
         else:
             print("\n¡Error! Ingresa una opción correcta.\n")
 
+def obtener_numero_años(valor):
+    while True:
+        entrada = input(valor)
+        if entrada.replace(" ", "").isdigit():
+            numero = int(entrada)
+            return numero
+        else:
+            print("\n¡Error! Ingresa un número de años.\n")
+
+def obtener_numero_1_3(valor):
+    while True:
+        entrada = input(valor)
+        if entrada.replace(" ", "").isdigit():
+            entrada = int(entrada)
+            if entrada >= 1 and entrada <= 3:
+                numero = int(entrada)
+                return numero
+            else:print("\n¡Clave Inválida! Ingresa un número del 1 al 3\n")
+        else:
+            print("\n¡Error! Ingresa un número entero\n")
+
 def agregar(personas):
-    nombre = input("Escribe tu nombre: ")
-    apellido_paterno = input("Escribe tu apellido paterno: ")
-    apellido_materno = input("Escribe tu apellido materno: ")
-    años = int(input("Escribe tus años trabajados: "))
+    nombre = palabra_convertida("Escribe tu nombre: ")
+    apellido_paterno = palabra_convertida("Escribe tu apellido paterno: ")
+    apellido_materno = palabra_convertida("Escribe tu apellido materno: ")
+    años = obtener_numero_años("Escribe tus años trabajados: ")
     print("Departamento de Atención a Clientes (Clave 1)")
     print("Departamento de Logistica (Clave 2)")
     print("Gerencia (Clave 3)")
-    clave = int(input("Escribe tu clave de departamento: "))
+    clave = obtener_numero_1_3("Escribe tu clave de departamento: ")
     personas.append([nombre,apellido_paterno,apellido_materno,años,clave])
     print()
 
@@ -27,42 +54,56 @@ def mostrar(personas):
         print(f"Apellido Paterno: {persona[1]}")
         print(f"Apellido Materno: {persona[2]}")
         print(f"Años trabajados: {persona[3]}")
-        print(f"Clave de departamento: {persona[4]}")
-        print()
-        
+        print(f"Clave de departamento: {persona[4]}\n")
+
 def buscar(personas):
-    nombre = input("Nombre: ")
+    nombre = palabra_convertida("Nombre: ")
     for persona in personas:
         if persona[0] == nombre:
             print(f"Nombre: {persona[0]}")
             print(f"Apellido Paterno: {persona[1]}")
             print(f"Apellido Materno: {persona[2]}")
             print(f"Años trabajados: {persona[3]}")
-            print(f"Clave de departamento: {persona[4]}")
-            print()
+            print(f"Clave de departamento: {persona[4]}\n")
             break
         else:print("Persona no encontrada")
     print()
 
 def modificar(personas):
-    nombre = input("Nombre: ")
+    nombre = palabra_convertida("Nombre: ")
     for persona in personas:
         if persona[0] == nombre:
-            nombre = input("Nombre: ")
-            apellido_paterno = input("Apellido Paterno: ")
-            apellido_materno = input("Apellido Materno: ")
-            años = input("Años trabajados: ")
-            clave = input("Clave de departamento: ")
-            persona[0] = nombre
-            persona[1] = apellido_paterno
-            persona[2] = apellido_materno
-            persona[3] = años
-            persona[4] = clave     
+            while True:
+                print()
+                print(f"1. Nombre: {persona[0]}")
+                print(f"2. Apellido Paterno: {persona[1]}")
+                print(f"3. Apellido Materno: {persona[2]}")
+                print(f"4. Años trabajados: {persona[3]}")
+                print(f"5. Clave de departamento: {persona[4]}")
+                print(f"6. Dejar de modificar\n")
+                opcion = obtener_numero_int("Que quieres modificar: ")
+                if opcion == 1:
+                    nombre = palabra_convertida("Nombre: ")
+                    persona[0] = nombre
+                elif opcion == 2:
+                    apellido_paterno = palabra_convertida("Apellido Paterno: ")
+                    persona[1] = apellido_paterno
+                elif opcion == 3:
+                    apellido_materno = palabra_convertida("Apellido Materno: ")
+                    persona[2] = apellido_materno
+                elif opcion == 4:
+                    años = obtener_numero_años("Años trabajados: ")
+                    persona[3] = años
+                elif opcion == 5:
+                    clave = obtener_numero_1_3("Clave de departamento: ")
+                    persona[4] = clave
+                elif opcion == 6:
+                    break
         else:print("Persona no encontrada")
     print()
 
 def eliminar(personas):
-    nombre = input("Nombre: ")
+    nombre = palabra_convertida("Nombre: ")
     for persona in personas:
         if persona[0] == nombre:
             personas.remove(persona)
@@ -83,9 +124,7 @@ def menu():
 
 def mostrar_resultados(personas):
     for persona in personas:
-        print(f"Nombre: {persona[0]}")
-        print(f"Apellido Paterno: {persona[1]}")
-        print(f"Apellido Materno: {persona[2]}")
+        print(f"A {persona[0]} {persona[1]} {persona[2]}")
         if persona[4] == 1:
             if persona[3] == 1:
                 Vacaciones = 6
@@ -167,4 +206,3 @@ while(True):
         print("Saliste del programa")
         break
     else: print("Opción Inválida")
-        
