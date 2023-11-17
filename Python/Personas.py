@@ -14,9 +14,9 @@ def agregar(personas):
     apellido_paterno = input("Escribe tu apellido paterno: ")
     apellido_materno = input("Escribe tu apellido materno: ")
     años = int(input("Escribe tus años trabajados: "))
-    print("Clave 1")
-    print("Clave 2")
-    print("Clave 3")
+    print("Departamento de Atención a Clientes (Clave 1)")
+    print("Departamento de Logistica (Clave 2)")
+    print("Gerencia (Clave 3)")
     clave = int(input("Escribe tu clave de departamento: "))
     personas.append([nombre,apellido_paterno,apellido_materno,años,clave])
     print()
@@ -48,11 +48,11 @@ def modificar(personas):
     nombre = input("Nombre: ")
     for persona in personas:
         if persona[0] == nombre:
-            nombre = input(f"Nombre: ")
-            apellido_paterno = input(f"Apellido Paterno: ")
-            apellido_materno = input(f"Apellido Materno: ")
-            años = input(f"Años trabajados: ")
-            clave = input(f"Clave de departamento: ")
+            nombre = input("Nombre: ")
+            apellido_paterno = input("Apellido Paterno: ")
+            apellido_materno = input("Apellido Materno: ")
+            años = input("Años trabajados: ")
+            clave = input("Clave de departamento: ")
             persona[0] = nombre
             persona[1] = apellido_paterno
             persona[2] = apellido_materno
@@ -124,6 +124,28 @@ def mostrar_resultados(personas):
         else: print("\nClave no Válida")
         
         print()
+
+print("\nCompañia multinacional de Rappi") #Este programa calcula los dias de vacaciones de las personas 
+print("*******************************\n") #segun al departamento que pertenecen y los años trabajados 
+#Tres departamentos:
+
+    #Departamento de Atención a Clientes (Clave 1)
+
+        #Con 1 año de servicio, reciben 6 dias de vacaciones.
+        #Con 2 a 6 años de servicio, reciben 14 dias de vacaciones.
+        #A partir de 7 años de servicio, reciben 20 dias de vacaciones.
+
+    #Departamento de Logistica (Clave 2)
+
+        #Con 1 año de servicio, reciben 7 dias de vacaciones.
+        #Con 2 a 6 años de servicio, reciben 15 dias de vacaciones.
+        #A partir de 7 años de servicio, reciben 22 dias de vacaciones.
+
+    #Gerencia (Clave 3)
+    
+        #Con 1 año de servicio, reciben 10 dias de vacaciones.
+        #Con 2 a 6 años de servicio, reciben 20 dias de vacaciones.
+        #A partir de 7 años de servicio, reciben 30 dias de vacaciones.
 
 agregar(personas)
 
