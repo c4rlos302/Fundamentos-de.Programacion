@@ -111,12 +111,12 @@ def eliminar(personas):
     print()
 
 def menu():
-    print("1. Agregar")
-    print("2. Mostrar")
-    print("3. Buscar")
-    print("4. Modificar")
-    print("5. Eliminar")
-    print("6. Resultados")
+    print("1. Agregar persona")
+    print("2. Mostrar personas")
+    print("3. Buscar persona")
+    print("4. Modificar persona")
+    print("5. Eliminar persona")
+    print("6. Mostrar resultados")
     print("7. Salir")
     opcion = obtener_numero_int("\nOpción: ")
     print()
