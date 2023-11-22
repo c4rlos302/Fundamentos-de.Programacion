@@ -104,10 +104,16 @@ def modificar(personas):
 
 def eliminar(personas):
     nombre = palabra_convertida("Nombre: ")
+    personas_a_eliminar = []
     for persona in personas:
         if persona[0] == nombre:
+            personas_a_eliminar.append(persona)
+    if personas_a_eliminar:
+        for persona in personas_a_eliminar:
             personas.remove(persona)
-        else:print("Persona no encontrada")
+        print("Persona eliminada\n")
+    else:
+        print("Persona no encontrada\n")
     print()
 
 def menu():
